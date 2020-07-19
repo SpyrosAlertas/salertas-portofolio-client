@@ -1,0 +1,63 @@
+<div class="align-items-center d-lg-flex vh-100 mt-5 mt-lg-0">
+  <div class="container">
+
+    <div class="jumbotron sa-navbar rounded shadow-lg">
+
+      <h2 class="text-center">{{ 'EDUCATION.TITLE' | translate }}</h2>
+
+      <hr class="bg-white">
+
+      <div class="row">
+        <div class="col-md-2 text-md-right text-secondary">
+          2009-2019
+        </div>
+        <div class="col-md-10">
+          <fa-icon [icon]="faGraduationCap"></fa-icon> &nbsp; {{ 'EDUCATION.DEGREEA.LEVEL' | translate }}
+          <b>{{ 'EDUCATION.DEGREEA.TITLE' | translate }}</b> {{ 'EDUCATION.DEGREEA.UNIVERSITY' | translate }}
+        </div>
+      </div>
+      <hr class="bg-white">
+
+      <div class="row mb-2">
+        <div class="col-md-2 text-md-right text-secondary">
+          2008
+        </div>
+        <div class="col-md-10">
+          <fa-icon [icon]="faCertificate"></fa-icon> &nbsp;&nbsp;
+          <b>{{ 'EDUCATION.CERTIFICATEA.TITLE' | translate }}</b>
+          {{ 'EDUCATION.CERTIFICATEA.ORGANIZATION' | translate }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 text-md-right text-secondary">
+          2007
+        </div>
+        <div class="col-md-10">
+          <fa-icon [icon]="faCertificate"></fa-icon> &nbsp;&nbsp;
+          <b>{{ 'EDUCATION.CERTIFICATEB.TITLE' | translate }}</b>
+          <span class="text-secondary">
+            <br>
+            &#8226; {{ 'EDUCATION.CERTIFICATEB.UNITA' | translate }} &#8226;
+            {{ 'EDUCATION.CERTIFICATEB.UNITB' | translate }} &#8226; {{ 'EDUCATION.CERTIFICATEB.UNITC' | translate }}
+            &#8226; {{ 'EDUCATION.CERTIFICATEB.UNITD' | translate }}
+            <br>
+            &#8226; {{ 'EDUCATION.CERTIFICATEB.UNITE' | translate }} &#8226;
+            {{ 'EDUCATION.CERTIFICATEB.UNITF' | translate }} &#8226; {{ 'EDUCATION.CERTIFICATEB.UNITG' | translate }}
+          </span>
+        </div>
+      </div>
+      <hr class="bg-white">
+
+      <div class="row">
+        <div class="col-12 text-center">
+          <fa-icon [icon]="faFileAlt"></fa-icon> &nbsp;&nbsp;
+          <a class="text-decoration-none" href="{{serverURL}}/Alertas_Spyros_CV_Online.pdf" target="_blank">
+            {{ 'EDUCATION.CVLINK' | translate }}
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

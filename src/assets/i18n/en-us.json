@@ -1,0 +1,86 @@
+{
+  "HEADER": {
+    "FULLNAME": "Spyros Alertas",
+    "HOME": "Home",
+    "EDUCATION": "Education",
+    "SKILLS": "Skills",
+    "PORTOFOLIO": "Portofolio",
+    "GAMES": "Games",
+    "SOCIALNETWORKS": "Find Me At:",
+    "ENGLISH": "English",
+    "GREEK": "Greek"
+  },
+  "HOME": {
+    "TITLE": "About me",
+    "DESCRIPTION": "My name is Spyros Alertas, graduate of the <strong>Department of Informatics and Telecommunications</strong> of the <strong>National and Kapodistrian University of Athens</strong>. Interested in <strong>Web Design</strong> and <strong>Web Development</strong>. I enjoy participating on all stages of the development of a web application, from designing the database, building the back-end logic and up to the front-end.",
+    "QUOTEPRTA": "There is nothing impossible to him who will try.",
+    "QUOTEPRTB": " ~ Alexander the Great,",
+    "QUOTEPRTC": "356 BC - 323 BC"
+  },
+  "EDUCATION": {
+    "TITLE": "Education",
+    "DEGREEA": {
+      "LEVEL": "Bachelor in",
+      "TITLE": "Informatics and Telecommunications",
+      "UNIVERSITY": "at National and Kapodistrian University of Athens"
+    },
+    "CERTIFICATEA": {
+      "TITLE": "Certificate of Proficiency in English",
+      "ORGANIZATION": "of the University of Michigan"
+    },
+    "CERTIFICATEB": {
+      "TITLE": "ECDL Core Certificate",
+      "UNITA": "Word Processing",
+      "UNITB": "Spreadsheets",
+      "UNITC": "Presentations",
+      "UNITD": "Information and Communication",
+      "UNITE": "Concepts of IT",
+      "UNITF": "Databases",
+      "UNITG": "Using the Computer and Managing Files"
+    },
+    "CVLINK": "My Curriculum Vitae"
+  },
+  "SKILLS": {
+    "TITLE": "Technical Skills",
+    "CATEGORYA": "Programming Languages:",
+    "CATEGORYB": "Paradigms:",
+    "CATEGORYC": "Database Languages:",
+    "CATEGORYD": "Database Management Systems:",
+    "CATEGORYE": "Frameworks:",
+    "CATEGORYF": "Other Knowledge & Techniques:",
+    "CATEGORYG": "Software Modeling Languages:",
+    "CATEGORYH": "Libraries:",
+    "CATEGORYI": "Operating Systems:",
+    "CATEGORYJ": "Tools:",
+    "SKILLA": "Object Oriented",
+    "SKILLB": "Procedural"
+  },
+  "PORTOFOLIO": {
+    "TITLE": "Portofolio",
+    "TEXTA": "This Page is Still Under Construction",
+    "TEXTB": "Thanks for checking out!"
+  },
+  "GAMES": {
+    "MATCHMATCH": {
+      "STATS": "Stats",
+      "TIME": "Time:",
+      "SECONDS": "seconds",
+      "SUCCESSES": "Successes:",
+      "FAILURES": "Failures:",
+      "SUCCESSPERCENTAGE": "Success %:",
+      "NEWGAME": "New Game",
+      "RESTARTGAME": "Restart Game",
+      "STOPGAME": "Stop Game",
+      "GETHELP": "Get Help",
+      "ALERTMESSAGE": {
+        "STOPPED": "Not the best way to end it! But thanks for trying!",
+        "HELPED": "You got some help but at least you tried! Congratulations!",
+        "WON": "Congratulations! You have won!"
+      },
+      "SERVERERROR": "Error contacting server to fetch images. Try again later."
+    }
+  },
+  "PAGENOTFOUND": {
+    "MESSAGE": "404: The page you were looking for doesn't exist, sorry!"
+  }
+}

@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~flag-icon-css/css/flag-icon.min.css";
+
+body {
+  background-color: #343a40;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.sa-navbar {
+  background-color: #22313f;
+}
+
+.sa-main-container {
+  background-color: #343a40;
+}
+
+.sa-navbar a {
+  color: white;
+}
+
+.sa-navbar .nav-link:hover {
+  background-color: #34495e;
+  color: #c0c0c0;
+  padding: 10px;
+}

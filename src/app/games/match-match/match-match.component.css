@@ -1,0 +1,52 @@
+.imgs {
+  max-width: 65px;
+  max-height: 65px;
+}
+
+.imgs-sm {
+  max-width: 35px;
+  max-height: 35px;
+}
+
+/* Border width and padding in .border-3 and .img-thumbnail 'should' be the same for */
+.border-3 {
+  border-width: 3px;
+}
+
+.img-thumbnail {
+  border-width: 0px;
+  padding: 3px;
+}
+
+/* The following classes are required for the image flip effects */
+@media only screen and (max-width: 992px) {
+  .flip-box {
+    position: relative;
+    width: 100px;
+    height: 133px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    border-width: 3px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .flip-box {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    border-width: 3px;
+  }
+}
+
+.flip-box-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flip-box-back {
+  transform: rotateY(180deg);
+}

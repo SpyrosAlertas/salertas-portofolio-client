@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-lg d-flex flex-column px-0">
+
+  <div class="row w-100 mt-lg-3 align-items-center">
+
+    <div class="col-2 col-lg-12 text-center mb-lg-2">
+      <img src="{{serverURL}}/salertas.jpg" alt="My photo" class="img-fluid rounded-circle" style="max-height: 75px;">
+      <span class="sr-only">My photo</span>
+    </div>
+
+    <div class="col-9 col-lg-12 text-center">
+      <div class="row">
+
+        <div class="col-10 col-lg-12 col-xl-10 mt-lg-0">
+          <a class="navbar-brand float-xl-left" routerLink="home"
+            (click)="isMenuCollapsed = true">{{ 'HEADER.FULLNAME' | translate }}</a>
+          <button class="navbar-toggler mb-2" style="color: white" type="button"
+            (click)="isMenuCollapsed = !isMenuCollapsed">
+            &#9776;
+          </button>
+        </div>
+
+        <div class="col-2 col-lg-12 col-xl-2 d-flex justify-content-center align-items-center px-0 mx-0">
+          <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+            <button class="btn" ngbDropdownToggle placement="bottom">
+              <span *ngIf="getLanguage()==='en-us'" class="flag-icon flag-icon-us"></span>
+              <span *ngIf="getLanguage()==='el'" class="flag-icon flag-icon-gr"></span>
+            </button>
+            <div class="border-secondary bg-dark dropdown-menu-right text-center m-2" ngbDropdownMenu>
+              <button ngbDropdownItem (click)="setLanguage('en-us')" placement="top"
+                ngbTooltip="{{ 'HEADER.ENGLISH' | translate }}"><span class="flag-icon flag-icon-us"></span></button>
+              <button ngbDropdownItem (click)="setLanguage('el')" placement="top"
+                ngbTooltip="{{ 'HEADER.GREEK' | translate }}"><span class="flag-icon flag-icon-gr"></span></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <hr class="bg-white d-none d-lg-block" style="width: 100%;">
+
+  </div>
+
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse w-100">
+
+    <ul class="nav d-flex flex-column w-100">
+      <li class="nav-item">
+        <a class="nav-link text-center" routerLink="home" routerLinkActive="active"
+          (click)="isMenuCollapsed = true">{{ 'HEADER.HOME' | translate }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-center" routerLink="education" routerLinkActive="active"
+          (click)="isMenuCollapsed = true">{{ 'HEADER.EDUCATION' | translate }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-center" routerLink="skills" routerLinkActive="active"
+          (click)="isMenuCollapsed = true">{{'HEADER.SKILLS' | translate }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-center" routerLink="portofolio" routerLinkActive="active"
+          (click)="isMenuCollapsed = true">{{ 'HEADER.PORTOFOLIO' | translate }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-center" routerLink="games" routerLinkActive="active"
+          (click)="isMenuCollapsed = true">{{ 'HEADER.GAMES' | translate }}</a>
+      </li>
+
+      <li class="nav-item">
+
+        <ul ngbNav class="navbar-nav d-flex flex-row justify-content-center">
+          <li class="nav-item mx-2 mx-lg-0">
+            <a class="nav-link text-white disabled text-light">{{ 'HEADER.SOCIALNETWORKS' | translate }}</a>
+          </li>
+          <li class="nav-item mx-2 mx-lg-0">
+            <a class="nav-link" href="https://www.linkedin.com/in/salertas" (click)="isMenuCollapsed = true"
+              target="_blank">
+              <fa-icon [icon]="faLinkedin"></fa-icon>
+            </a>
+          </li>
+          <li class="nav-item mx-2 mx-lg-0">
+            <a class="nav-link" href="https://github.com/SpyrosAlertas" (click)="isMenuCollapsed = true"
+              target="_blank">
+              <fa-icon [icon]="faGithub"></fa-icon>
+            </a>
+          </li>
+        </ul>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+</nav>

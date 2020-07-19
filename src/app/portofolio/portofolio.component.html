@@ -1,0 +1,30 @@
+<!-- When i implement this component and its height get longer i will have to change d-flex to d-lg-flex -->
+<div class="align-items-center d-flex vh-100 mt-5 mt-lg-0">
+  <div class="container">
+
+    <div class="jumbotron sa-navbar rounded shadow-lg text-center text-warning border border-warning">
+
+      <h2 class="text-center">{{ 'PORTOFOLIO.TITLE' | translate }}</h2>
+
+      <div class="row">
+        <div class="col-12">
+          <span class="animate-hammer">
+            <fa-icon [icon]="faHammer"></fa-icon>
+          </span> &nbsp;
+          {{ 'PORTOFOLIO.TEXTA' | translate }} &nbsp;
+          <span class="flip-hammer">
+            <span class="animate-hammer">
+              <fa-icon [icon]="faHammer"></fa-icon>
+            </span>
+          </span>
+          <br>
+          <div class="col-12">
+            {{ 'PORTOFOLIO.TEXTB' | translate }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

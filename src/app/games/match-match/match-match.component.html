@@ -1,0 +1,129 @@
+<div class="align-items-center d-lg-flex mt-3">
+  <div class="container-fluid">
+
+    <div class="row mt-4 mb-5">
+
+      <div class="col-12 col-lg-2 align-self-center">
+
+        <div class="row shadow py-3">
+          <div class="col-4 col-lg-12 text-success text-center">
+            {{ 'GAMES.MATCHMATCH.STATS' | translate }}
+          </div>
+          <hr class="bg-white d-none d-lg-block" style="width: 100%;">
+          <div class="col-4 col-lg-12">
+            {{ 'GAMES.MATCHMATCH.TIME' | translate }} <span class="float-lg-right text-info">{{ time }}
+              {{ 'GAMES.MATCHMATCH.SECONDS' | translate }}</span>
+          </div>
+          <div class="col-4 col-lg-12">
+            {{ 'GAMES.MATCHMATCH.SUCCESSES' | translate }} <span class="float-lg-right text-info">{{ successes }}</span>
+          </div>
+
+          <div class="col-4 d-block d-lg-none"></div>
+
+          <div class="col-4 col-lg-12">
+            {{ 'GAMES.MATCHMATCH.FAILURES' | translate }} <span class="float-lg-right text-info">{{ failures }}</span>
+          </div>
+          <div class="col-4 col-lg-12">
+            {{ 'GAMES.MATCHMATCH.SUCCESSPERCENTAGE' | translate }}
+            <span class="float-lg-right text-info">
+              {{successPercentage | slice:0:4}}%
+            </span>
+          </div>
+        </div>
+
+        <div class="row mt-2 mt-lg-5 text-center d-none d-lg-block">
+          <div class="col-12">
+            <button type="button" class="btn btn-secondary my-2" style="width: 10em"
+              (click)="onNewGame()">{{ 'GAMES.MATCHMATCH.NEWGAME' | translate }}</button>
+          </div>
+          <div class="col-12">
+            <button type="button" class="btn btn-secondary my-2" style="width: 10em"
+              [disabled]="isLoadingData || serverError ? true : false"
+              (click)="onRestartGame()">{{ 'GAMES.MATCHMATCH.RESTARTGAME' | translate }}</button>
+          </div>
+          <div class="col-12">
+            <button type="button" class="btn btn-secondary my-2" style="width: 10em"
+              [disabled]="isLoadingData || serverError || isFinished ? true : false"
+              (click)="onStopGame()">{{ 'GAMES.MATCHMATCH.STOPGAME' | translate }}
+            </button>
+          </div>
+          <div class="col-12">
+            <button type="button" class="btn btn-secondary my-2" style="width: 10em"
+              [disabled]="isLoadingData || serverError || isFinished ? true : false"
+              (click)="onGetHelp()">{{ 'GAMES.MATCHMATCH.GETHELP' | translate }}
+            </button>
+          </div>
+        </div>
+
+        <div class="row mt-2 mt-lg-5 text-center d-lg-none d-block ">
+          <div class="col-12 btn-group">
+            <button type="button" class="btn btn-sm btn-secondary my-2"
+              (click)="onNewGame()">{{ 'GAMES.MATCHMATCH.NEWGAME' | translate }}</button>
+            <button type="button" class="btn btn-sm btn-secondary my-2"
+              [disabled]="isLoadingData || serverError ? true : false"
+              (click)="onRestartGame()">{{ 'GAMES.MATCHMATCH.RESTARTGAME' | translate }}</button>
+            <button type="button" class="btn btn-sm btn-secondary my-2"
+              [disabled]="isLoadingData || serverError || isFinished ? true : false"
+              (click)="onStopGame()">{{ 'GAMES.MATCHMATCH.STOPGAME' | translate }}
+            </button>
+            <button type="button" class="btn btn-sm btn-secondary my-2"
+              [disabled]="isLoadingData || serverError || isFinished ? true : false"
+              (click)="onGetHelp()">{{ 'GAMES.MATCHMATCH.GETHELP' | translate }}
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-12 col-lg-10 px-0 px-lg-3">
+        <div class="row mx-0 mx-lg-5 mr-lg-4 py-4 shadow-lg rounded">
+
+          <div *ngIf="isLoadingData" class="col-12 text-center">
+            <app-loading-spinner></app-loading-spinner>
+          </div>
+          <div *ngIf="serverError" class="col-12 text-center text-danger">
+            {{ 'GAMES.MATCHMATCH.SERVERERROR' | translate }}
+          </div>
+
+          <div class="col-4 col-md-3 col-xl-2 d-flex" *ngFor="let card of cards; let i = index">
+
+            <div [@startGame] class="flip-box my-2" (click)="onSelectCard(i)" [@flipState]="isFlipped(i)">
+              <div
+                class="flip-box-inner d-flex align-items-center justify-content-center btn border-3 border-secondary my-cards shadow">
+                <img src="{{serverURL}}/games/match-match/cat_img_cover.jpg"
+                  class="img-fluid rounded-circle shadow imgs d-none d-lg-block" alt="Card cover image">
+                <img src="{{serverURL}}/games/match-match/cat_img_cover.jpg"
+                  class="img-fluid rounded-circle shadow imgs-sm d-block d-lg-none" alt="Card cover image">
+              </div>
+              <div class="flip-box-inner flip-box-back">
+                <img src="{{serverURL}}/games/match-match/{{card.cardName}}"
+                  class="rounded img-fluid img-thumbnail h-100"
+                  [ngStyle]="{ 'background-color': (isFlipped(i) && !isFound(i)) ? 'yellow' : 'red' }"
+                  [ngStyle]="{ 'background-color': isFound(i) ? 'green' : null }" alt="Responsive image">
+              </div>
+            </div>
+
+          </div>
+
+          <hr class="bg-secondary mt-4" style="width: 100%;">
+
+          <div class="row mx-5 mt-4 mb-2 w-100" *ngIf="isFinished">
+            <div class="col-12 text-center">
+              <ngb-alert *ngIf="isFinished && !alertClosed" [type]="alertType" class="m-0" (close)="alertClosed = true">
+                {{ alertMessage }}
+                <fa-icon [icon]="faMedal"></fa-icon>
+              </ngb-alert>
+            </div>
+          </div>
+          <div class="row mx-5 my-4 w-100" *ngIf="!isFinished || alertClosed">
+            <div class="col-12 my-3" *ngIf="!alertClosed">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.active {
+  background-color: #343a40;
+  color: #ffc107;
+}
+
+.active:hover {
+  background-color: #343a40;
+  color: #ffc107;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu {
+  min-width: 60px !important;
+}

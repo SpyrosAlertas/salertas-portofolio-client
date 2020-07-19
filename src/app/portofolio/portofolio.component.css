@@ -1,0 +1,23 @@
+.flip-hammer {
+  display: inline-block;
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+}
+
+.animate-hammer {
+  display: inline-block;
+  animation-name: animate-h;
+  animation-duration: 750ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animate-h {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
